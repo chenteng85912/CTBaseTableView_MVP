@@ -80,7 +80,7 @@ NSString *const PAGESIZE = @"pageSize";
         
     }
     
-    self.tableView.mj_header = [self makeMJRefeshWithTarget:self andMethod:@selector(initStartData)];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(initStartData)];
 
 }
 
@@ -249,23 +249,6 @@ NSString *const PAGESIZE = @"pageSize";
     }
 }
 
-- (MJRefreshNormalHeader *)makeMJRefeshWithTarget:(id)root andMethod:(SEL)methodName{
-    MJRefreshNormalHeader *header = [[MJRefreshNormalHeader alloc]init];
-    [header setTitle:@"继续下拉以刷新" forState:MJRefreshStateIdle];
-    [header setTitle:@"释放刷新" forState:MJRefreshStatePulling];
-    [header setTitle:@"正在刷新..." forState:MJRefreshStateRefreshing];
-    // 隐藏时间
-    header.lastUpdatedTimeLabel.hidden = YES;
-    
-    header.stateLabel.font = [UIFont fontWithName:@"Avenir-Book" size:14];
-    header.lastUpdatedTimeLabel.font = [UIFont fontWithName:@"Avenir-Book" size:10];
-    
-    header.stateLabel.textColor = [UIColor blackColor];
-    header.lastUpdatedTimeLabel.textColor = [UIColor blackColor];
-    header.refreshingTarget = root;
-    header.refreshingAction = methodName;
-    return header;
-}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
