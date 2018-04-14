@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CT_TableViewModelProtocol.h"
-#import "CT_TableViewModel.h"
 
 #define returnValue     @"returnValue"
 #define CODE            @"code"
@@ -19,19 +17,28 @@ typedef enum {
     RequestSuccessModal=0,  //请求成功
     RequestTimeOutModal,    //请求超时
     RequestFailModal,       //请求失败
-    NetworkHaveProblem,     //网络错误
+    NetworkHaveProblem      //网络错误
     
 } RequesetStateModal;
 
-@class CT_TableViewCellModel;
+@class CTBaseCellModel;
 
-@interface CT_TableViewModel : NSObject<CT_TableViewModelProtocol>
+@interface CTBaseTbViewModel : NSObject
 
 @property (strong, nonatomic) NSString *code;//状态码
 @property (strong, nonatomic) NSString *message;//网络反馈信息
 @property (strong, nonatomic) NSString *customeCellModelName;//自定义单元格模型类名
 
-@property (strong, nonatomic) NSMutableArray <CT_TableViewCellModel *> *dataSourceArray;//表视图数据源,数据更新后复制给列表VC的dataArray;
+@property (strong, nonatomic) NSMutableArray <CTBaseCellModel *> *dataSourceArray;//表视图数据源,数据更新后复制给列表VC的dataArray;
 @property (assign, nonatomic) RequesetStateModal requestState;//请求状态
+
+//初始化表格数据《表格数据模型实现该方法》
+- (void)initStartTableViewData:(id)tbViewData;
+
+//加载更多表格数据《表格数据模型实现该方法》
+- (void)initMoreTableViewData:(id)tbViewData;
+
+//加载本地数据
+- (void)initLocalData:(NSArray *)localArray;
 
 @end

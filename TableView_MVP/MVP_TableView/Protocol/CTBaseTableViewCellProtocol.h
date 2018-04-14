@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "CT_TableViewCellModelProtocol.h"
+#import "CTBaseCellModelProtocol.h"
 
-@protocol CT_TableViewCellProtocol <NSObject>
+@protocol CTBaseTableViewCellProtocol <NSObject>
 
 @optional
-
 //单元格数据处理和界面布局《单元格实现该方法》
-- (void)processCellData:(id <CT_TableViewCellModelProtocol>)data;
+- (void)processCellData:(id <CTBaseCellModelProtocol>)data;
 
 @end

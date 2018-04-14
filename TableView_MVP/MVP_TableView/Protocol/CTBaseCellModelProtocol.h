@@ -8,13 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol CT_TableViewCellModelProtocol <NSObject>
+@protocol CTBaseCellModelProtocol <NSObject>
 
 @optional
 
 //kvc初始化模型《父类单元格模型 实现该协议方法》
-- (instancetype)initValueWithDictionary:(NSDictionary *)dic;
+- (instancetype)initValueWithDictionary:(NSDictionary *)cellInfo;
+
+- (void)CTSetValue:(id)value forUndefinedKey:(NSString *)key;
 
 //计算单元格高度《自定义单元格模型 实现该协议方法》
 - (void)calculateSizeConstrainedToSize:(CGSize)size;
+
 @end

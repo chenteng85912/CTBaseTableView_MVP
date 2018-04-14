@@ -6,32 +6,25 @@
 //  Copyright © 2017年 腾. All rights reserved.
 //
 
-#import "CT_TableViewModel.h"
-#import "CT_TableViewCellModel.h"
-#import "CT_SuperTableViewController.h"
+#import "CTBaseTbViewModel.h"
+#import "CTBaseCellModel.h"
+#import "CTBaseCellModelProtocol.h"
 
-@implementation CT_TableViewModel
-
-- (NSMutableArray <CT_TableViewCellModel*>*)dataSourceArray{
-    if (!_dataSourceArray) {
-        _dataSourceArray = [NSMutableArray new];
-        
-    }
-    return _dataSourceArray;
-}
+@implementation CTBaseTbViewModel
 
 //初始化数据
 - (void)initStartTableViewData:(id)tbViewData{
     [self.dataSourceArray removeAllObjects];
-    [self initData:tbViewData];
+    [self p_initData:tbViewData];
 }
+
 //加载更多数据
 - (void)initMoreTableViewData:(id)tbViewData{
-    [self initData:tbViewData];
+    [self p_initData:tbViewData];
 }
 
 //生成数据模型
-- (void)initData:(id)tbViewData{
+- (void)p_initData:(id)tbViewData{
     self.code = [tbViewData valueForKey:CODE];
     if (self.code.integerValue==200) {
         self.requestState = RequestSuccessModal;
@@ -49,7 +42,7 @@
             Class  aclass = NSClassFromString(self.customeCellModelName);
             if (aclass)
             {
-                id <CT_TableViewCellModelProtocol> cellModel = [aclass new];
+                id <CTBaseCellModelProtocol> cellModel = [aclass new];
                 if ([cellModel respondsToSelector:@selector(initValueWithDictionary:)]) {
                     cellModel = [cellModel initValueWithDictionary:valueData];
                     if ([cellModel respondsToSelector:@selector(calculateSizeConstrainedToSize:)]) {
@@ -60,7 +53,6 @@
                 [self.dataSourceArray addObject:cellModel];
                 
             }
-            
         }
     }
 }
@@ -77,7 +69,7 @@
         Class  aclass = NSClassFromString(self.customeCellModelName);
         if (aclass)
         {
-            id <CT_TableViewCellModelProtocol> cellModel = [aclass new];
+            id <CTBaseCellModelProtocol> cellModel = [aclass new];
             if ([cellModel respondsToSelector:@selector(initValueWithDictionary:)]) {
                 cellModel = [cellModel initValueWithDictionary:valueData];
                 if ([cellModel respondsToSelector:@selector(calculateSizeConstrainedToSize:)]) {
@@ -87,19 +79,16 @@
             }
             [self.dataSourceArray addObject:cellModel];
             
-        }
-        
+        }        
     }
 }
-//字典过滤
-//- (NSMutableDictionary *)fitterDic:(NSDictionary *)dic{
-//    NSMutableDictionary *newDic = [dic mutableCopy];
-//    for (NSString *key in newDic.allKeys) {
-//        id value = newDic[key];
-//        if (!value|[value isKindOfClass:[NSNull class]]) {
-//            [newDic setObject:@"" forKey:key];
-//        }
-//    }
-//    return newDic;
-//}
+#pragma mark lazy
+- (NSMutableArray <CTBaseCellModel *> *)dataSourceArray{
+    if (!_dataSourceArray) {
+        _dataSourceArray = [NSMutableArray new];
+        
+    }
+    return _dataSourceArray;
+}
+
 @end

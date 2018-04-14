@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "TestViewController.h"
+
 @interface ViewController ()
 
 @end
@@ -20,7 +20,6 @@
 }
 
 - (IBAction)testAction:(id)sender {
-    [self.navigationController pushViewController:[TestViewController new] animated:YES];
     
     
 }
