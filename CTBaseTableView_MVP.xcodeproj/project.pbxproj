@@ -12,7 +12,6 @@
 		3E58E83720847D20006C7E88 /* CTRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E7EA20847D20006C7E88 /* CTRequest.m */; };
 		3E58E83820847D20006C7E88 /* CTBaseTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E7F220847D20006C7E88 /* CTBaseTableViewCellModel.m */; };
 		3E58E83920847D20006C7E88 /* CTBaseTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E7F320847D20006C7E88 /* CTBaseTableViewModel.m */; };
-		3E58E83A20847D20006C7E88 /* CTBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E7F520847D20006C7E88 /* CTBaseTableViewCell.m */; };
 		3E58E83B20847D20006C7E88 /* TableView_MVP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E7F720847D20006C7E88 /* TableView_MVP.xcdatamodeld */; };
 		3E58E83C20847D20006C7E88 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3E58E7FA20847D20006C7E88 /* LICENSE */; };
 		3E58E83D20847D20006C7E88 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E7FC20847D20006C7E88 /* UIScrollView+MJRefresh.m */; };
@@ -42,9 +41,12 @@
 		3E58E85520847D20006C7E88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E58E82F20847D20006C7E88 /* Main.storyboard */; };
 		3E58E85620847D20006C7E88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E83120847D20006C7E88 /* main.m */; };
 		3E58E85720847D20006C7E88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E83220847D20006C7E88 /* AppDelegate.m */; };
-		3E58E85820847D20006C7E88 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E58E83320847D20006C7E88 /* Info.plist */; };
-		3E58E85C20847D9C006C7E88 /* CTBaseTableViewPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E85A20847D9C006C7E88 /* CTBaseTableViewPresenter.m */; };
-		3E58E85F20847DB2006C7E88 /* CTBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E85E20847DB2006C7E88 /* CTBaseTableViewController.m */; };
+		3E58E85C20847D9C006C7E88 /* CTTableViewPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E85A20847D9C006C7E88 /* CTTableViewPresenter.m */; };
+		3E59A91B20859AEE0005D3B1 /* CTBasePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59A91A20859AEE0005D3B1 /* CTBasePresenter.m */; };
+		3E59A9212085C47B0005D3B1 /* CTBaseDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59A91F2085C47B0005D3B1 /* CTBaseDataModel.m */; };
+		3E59A9302085DDC40005D3B1 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59A92F2085DDC40005D3B1 /* TestViewController.m */; };
+		3E59A9332085DEE40005D3B1 /* TestCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59A9322085DEE40005D3B1 /* TestCellModel.m */; };
+		3E59A9362085DF010005D3B1 /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E59A9352085DF010005D3B1 /* TestTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,14 +61,12 @@
 		3E58E7E920847D20006C7E88 /* CTNetworkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTNetworkService.m; sourceTree = "<group>"; };
 		3E58E7EA20847D20006C7E88 /* CTRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTRequest.m; sourceTree = "<group>"; };
 		3E58E7EC20847D20006C7E88 /* CTBaseTableViewCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBaseTableViewCellProtocol.h; sourceTree = "<group>"; };
-		3E58E7ED20847D20006C7E88 /* CTBaseTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBaseTableViewProtocol.h; sourceTree = "<group>"; };
+		3E58E7ED20847D20006C7E88 /* CTTableViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTTableViewProtocol.h; sourceTree = "<group>"; };
 		3E58E7EE20847D20006C7E88 /* CTBaseTableViewCellModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBaseTableViewCellModelProtocol.h; sourceTree = "<group>"; };
 		3E58E7F020847D20006C7E88 /* CTBaseTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBaseTableViewCellModel.h; sourceTree = "<group>"; };
 		3E58E7F120847D20006C7E88 /* CTBaseTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBaseTableViewModel.h; sourceTree = "<group>"; };
 		3E58E7F220847D20006C7E88 /* CTBaseTableViewCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBaseTableViewCellModel.m; sourceTree = "<group>"; };
 		3E58E7F320847D20006C7E88 /* CTBaseTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBaseTableViewModel.m; sourceTree = "<group>"; };
-		3E58E7F520847D20006C7E88 /* CTBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBaseTableViewCell.m; sourceTree = "<group>"; };
-		3E58E7F620847D20006C7E88 /* CTBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBaseTableViewCell.h; sourceTree = "<group>"; };
 		3E58E7F820847D20006C7E88 /* TableView_MVP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TableView_MVP.xcdatamodel; sourceTree = "<group>"; };
 		3E58E7FA20847D20006C7E88 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3E58E7FC20847D20006C7E88 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
@@ -118,11 +118,21 @@
 		3E58E83220847D20006C7E88 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3E58E83320847D20006C7E88 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E58E83420847D20006C7E88 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3E58E85A20847D9C006C7E88 /* CTBaseTableViewPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBaseTableViewPresenter.m; sourceTree = "<group>"; };
-		3E58E85B20847D9C006C7E88 /* CTBaseTableViewPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBaseTableViewPresenter.h; sourceTree = "<group>"; };
-		3E58E85D20847DB1006C7E88 /* CTBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBaseTableViewController.h; sourceTree = "<group>"; };
-		3E58E85E20847DB2006C7E88 /* CTBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBaseTableViewController.m; sourceTree = "<group>"; };
-		3E58E86020847E34006C7E88 /* CTBaseTableViewPresenterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBaseTableViewPresenterProtocol.h; sourceTree = "<group>"; };
+		3E58E85A20847D9C006C7E88 /* CTTableViewPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTTableViewPresenter.m; sourceTree = "<group>"; };
+		3E58E85B20847D9C006C7E88 /* CTTableViewPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTTableViewPresenter.h; sourceTree = "<group>"; };
+		3E58E86020847E34006C7E88 /* CTTableViewPresenterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTTableViewPresenterProtocol.h; sourceTree = "<group>"; };
+		3E59A91920859AEE0005D3B1 /* CTBasePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTBasePresenter.h; sourceTree = "<group>"; };
+		3E59A91A20859AEE0005D3B1 /* CTBasePresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTBasePresenter.m; sourceTree = "<group>"; };
+		3E59A91D20859F840005D3B1 /* CTBaseViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTBaseViewControllerProtocol.h; sourceTree = "<group>"; };
+		3E59A91E2085A2F80005D3B1 /* CTBasePresenterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBasePresenterProtocol.h; sourceTree = "<group>"; };
+		3E59A91F2085C47B0005D3B1 /* CTBaseDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBaseDataModel.m; sourceTree = "<group>"; };
+		3E59A9202085C47B0005D3B1 /* CTBaseDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBaseDataModel.h; sourceTree = "<group>"; };
+		3E59A92E2085DDC40005D3B1 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		3E59A92F2085DDC40005D3B1 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		3E59A9312085DEE40005D3B1 /* TestCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestCellModel.h; sourceTree = "<group>"; };
+		3E59A9322085DEE40005D3B1 /* TestCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCellModel.m; sourceTree = "<group>"; };
+		3E59A9342085DF010005D3B1 /* TestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTableViewCell.h; sourceTree = "<group>"; };
+		3E59A9352085DF010005D3B1 /* TestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTableViewCell.m; sourceTree = "<group>"; };
 		A445640E1E2A81E80079C37E /* CTBaseTableView_MVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTBaseTableView_MVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,6 +171,12 @@
 				3E58E7F720847D20006C7E88 /* TableView_MVP.xcdatamodeld */,
 				3E58E83420847D20006C7E88 /* ViewController.h */,
 				3E58E82C20847D20006C7E88 /* ViewController.m */,
+				3E59A92E2085DDC40005D3B1 /* TestViewController.h */,
+				3E59A92F2085DDC40005D3B1 /* TestViewController.m */,
+				3E59A9312085DEE40005D3B1 /* TestCellModel.h */,
+				3E59A9322085DEE40005D3B1 /* TestCellModel.m */,
+				3E59A9342085DF010005D3B1 /* TestTableViewCell.h */,
+				3E59A9352085DF010005D3B1 /* TestTableViewCell.m */,
 			);
 			path = CTBaseTableView_MVP;
 			sourceTree = "<group>";
@@ -168,11 +184,16 @@
 		3E58E7E220847D20006C7E88 /* MVP_TableView */ = {
 			isa = PBXGroup;
 			children = (
+				3E59A91E2085A2F80005D3B1 /* CTBasePresenterProtocol.h */,
+				3E59A91D20859F840005D3B1 /* CTBaseViewControllerProtocol.h */,
+				3E59A91920859AEE0005D3B1 /* CTBasePresenter.h */,
+				3E59A91A20859AEE0005D3B1 /* CTBasePresenter.m */,
+				3E59A9202085C47B0005D3B1 /* CTBaseDataModel.h */,
+				3E59A91F2085C47B0005D3B1 /* CTBaseDataModel.m */,
 				3E58E7E320847D20006C7E88 /* NetworkService */,
 				3E58E85920847D9C006C7E88 /* Presenter */,
 				3E58E7EB20847D20006C7E88 /* Protocol */,
 				3E58E7EF20847D20006C7E88 /* Model */,
-				3E58E7F420847D20006C7E88 /* View */,
 			);
 			path = MVP_TableView;
 			sourceTree = "<group>";
@@ -195,9 +216,9 @@
 			isa = PBXGroup;
 			children = (
 				3E58E7EC20847D20006C7E88 /* CTBaseTableViewCellProtocol.h */,
-				3E58E7ED20847D20006C7E88 /* CTBaseTableViewProtocol.h */,
+				3E58E7ED20847D20006C7E88 /* CTTableViewProtocol.h */,
 				3E58E7EE20847D20006C7E88 /* CTBaseTableViewCellModelProtocol.h */,
-				3E58E86020847E34006C7E88 /* CTBaseTableViewPresenterProtocol.h */,
+				3E58E86020847E34006C7E88 /* CTTableViewPresenterProtocol.h */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -211,17 +232,6 @@
 				3E58E7F320847D20006C7E88 /* CTBaseTableViewModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		3E58E7F420847D20006C7E88 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3E58E7F620847D20006C7E88 /* CTBaseTableViewCell.h */,
-				3E58E7F520847D20006C7E88 /* CTBaseTableViewCell.m */,
-				3E58E85D20847DB1006C7E88 /* CTBaseTableViewController.h */,
-				3E58E85E20847DB2006C7E88 /* CTBaseTableViewController.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		3E58E7F920847D20006C7E88 /* MJRefresh */ = {
@@ -332,8 +342,8 @@
 		3E58E85920847D9C006C7E88 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				3E58E85B20847D9C006C7E88 /* CTBaseTableViewPresenter.h */,
-				3E58E85A20847D9C006C7E88 /* CTBaseTableViewPresenter.m */,
+				3E58E85B20847D9C006C7E88 /* CTTableViewPresenter.h */,
+				3E58E85A20847D9C006C7E88 /* CTTableViewPresenter.m */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -381,7 +391,7 @@
 		A44564061E2A81E80079C37E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "腾";
 				TargetAttributes = {
 					A445640D1E2A81E80079C37E = {
@@ -420,7 +430,6 @@
 				3E58E85520847D20006C7E88 /* Main.storyboard in Resources */,
 				3E58E85420847D20006C7E88 /* LaunchScreen.storyboard in Resources */,
 				3E58E83C20847D20006C7E88 /* LICENSE in Resources */,
-				3E58E85820847D20006C7E88 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,9 +445,7 @@
 				3E58E84720847D20006C7E88 /* MJRefreshAutoGifFooter.m in Sources */,
 				3E58E83520847D20006C7E88 /* CTRequestQueueManager.m in Sources */,
 				3E58E84B20847D20006C7E88 /* MJRefreshGifHeader.m in Sources */,
-				3E58E85F20847DB2006C7E88 /* CTBaseTableViewController.m in Sources */,
 				3E58E84F20847D20006C7E88 /* MJRefreshAutoFooter.m in Sources */,
-				3E58E83A20847D20006C7E88 /* CTBaseTableViewCell.m in Sources */,
 				3E58E84E20847D20006C7E88 /* MJRefreshBackFooter.m in Sources */,
 				3E58E85020847D20006C7E88 /* MJRefreshComponent.m in Sources */,
 				3E58E85320847D20006C7E88 /* ViewController.m in Sources */,
@@ -447,20 +454,25 @@
 				3E58E84820847D20006C7E88 /* MJRefreshAutoNormalFooter.m in Sources */,
 				3E58E84620847D20006C7E88 /* MJRefreshAutoStateFooter.m in Sources */,
 				3E58E83B20847D20006C7E88 /* TableView_MVP.xcdatamodeld in Sources */,
+				3E59A9302085DDC40005D3B1 /* TestViewController.m in Sources */,
 				3E58E84D20847D20006C7E88 /* MJRefreshHeader.m in Sources */,
 				3E58E84120847D20006C7E88 /* NSBundle+MJRefresh.m in Sources */,
 				3E58E85720847D20006C7E88 /* AppDelegate.m in Sources */,
 				3E58E84020847D20006C7E88 /* UIScrollView+MJExtension.m in Sources */,
 				3E58E84420847D20006C7E88 /* MJRefreshBackStateFooter.m in Sources */,
 				3E58E84320847D20006C7E88 /* MJRefreshBackGifFooter.m in Sources */,
+				3E59A91B20859AEE0005D3B1 /* CTBasePresenter.m in Sources */,
 				3E58E83D20847D20006C7E88 /* UIScrollView+MJRefresh.m in Sources */,
 				3E58E84220847D20006C7E88 /* UIView+MJExtension.m in Sources */,
-				3E58E85C20847D9C006C7E88 /* CTBaseTableViewPresenter.m in Sources */,
+				3E58E85C20847D9C006C7E88 /* CTTableViewPresenter.m in Sources */,
 				3E58E83E20847D20006C7E88 /* MJRefreshConst.m in Sources */,
+				3E59A9332085DEE40005D3B1 /* TestCellModel.m in Sources */,
+				3E59A9362085DF010005D3B1 /* TestTableViewCell.m in Sources */,
 				3E58E83720847D20006C7E88 /* CTRequest.m in Sources */,
 				3E58E83920847D20006C7E88 /* CTBaseTableViewModel.m in Sources */,
 				3E58E83820847D20006C7E88 /* CTBaseTableViewCellModel.m in Sources */,
 				3E58E85620847D20006C7E88 /* main.m in Sources */,
+				3E59A9212085C47B0005D3B1 /* CTBaseDataModel.m in Sources */,
 				3E58E84920847D20006C7E88 /* MJRefreshNormalHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,6 +512,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -507,6 +520,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -555,6 +569,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -562,6 +577,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

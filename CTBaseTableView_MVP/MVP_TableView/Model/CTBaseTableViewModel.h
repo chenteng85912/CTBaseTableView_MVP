@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CTBaseTableViewCellModel.h"
 
 #define returnValue     @"returnValue"
 #define CODE            @"code"
@@ -20,8 +21,6 @@ typedef NS_ENUM(NSInteger,RequesetStateModal){
     NetworkHaveProblem      //网络错误
     
 };
-
-@class CTBaseTableViewCellModel;
 
 @interface CTBaseTableViewModel : NSObject
 
