@@ -168,7 +168,6 @@
         
         return [_tbViewController CTBaseTableView:tableView cellForRowAtIndexPath:indexPath];
     }
-    CTBaseTableViewCellModel <CTBaseTableViewCellModelProtocol> *model = self.tableViewData.dataSourceArray[indexPath.row];
     
     NSString *cellIdentifier = nil;
     if (CT_SUBCLASS_RESPONSE(_tbViewController,customeCellNibName)) {
@@ -177,18 +176,21 @@
     if (CT_SUBCLASS_RESPONSE(_tbViewController,customeCellClassName)) {
         cellIdentifier = _tbViewController.customeCellClassName;
     }
-
     
     id <CTBaseTableViewCellProtocol> cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    if ([cell respondsToSelector:@selector(processCellData:indexPath:)]) {
-        [cell processCellData:model indexPath:indexPath];
-        
-    }
     return (UITableViewCell*)cell;
     
 }
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{    CTBaseTableViewCellModel <CTBaseTableViewCellModelProtocol> *model = self.tableViewData.dataSourceArray[indexPath.row];
 
+    id <CTBaseTableViewCellProtocol> mycell = (id <CTBaseTableViewCellProtocol>)cell;
+    
+    if ([mycell respondsToSelector:@selector(processCellData:indexPath:)]) {
+        [mycell processCellData:model indexPath:indexPath];
+        
+    }
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     CTBaseTableViewCellModel  *model = self.tableViewData.dataSourceArray[indexPath.row];

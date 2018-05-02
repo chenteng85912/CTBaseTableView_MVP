@@ -159,6 +159,10 @@
 		3E58E7E020847D20006C7E88 /* CTBaseTableView_MVP */ = {
 			isa = PBXGroup;
 			children = (
+				3E58E7F920847D20006C7E88 /* MJRefresh */,
+				3E58E7E220847D20006C7E88 /* MVP_TableView */,
+				3E58E7E320847D20006C7E88 /* NetworkService */,
+				3E84C19A208ED8B800A0378E /* MVP_Common */,
 				3E58E7E120847D20006C7E88 /* AppDelegate.h */,
 				3E58E83220847D20006C7E88 /* AppDelegate.m */,
 				3E58E82B20847D20006C7E88 /* Assets.xcassets */,
@@ -166,8 +170,6 @@
 				3E58E82D20847D20006C7E88 /* LaunchScreen.storyboard */,
 				3E58E83120847D20006C7E88 /* main.m */,
 				3E58E82F20847D20006C7E88 /* Main.storyboard */,
-				3E58E7F920847D20006C7E88 /* MJRefresh */,
-				3E58E7E220847D20006C7E88 /* MVP_TableView */,
 				3E58E7F720847D20006C7E88 /* TableView_MVP.xcdatamodeld */,
 				3E58E83420847D20006C7E88 /* ViewController.h */,
 				3E58E82C20847D20006C7E88 /* ViewController.m */,
@@ -184,13 +186,6 @@
 		3E58E7E220847D20006C7E88 /* MVP_TableView */ = {
 			isa = PBXGroup;
 			children = (
-				3E59A91E2085A2F80005D3B1 /* CTBasePresenterProtocol.h */,
-				3E59A91D20859F840005D3B1 /* CTBaseViewControllerProtocol.h */,
-				3E59A91920859AEE0005D3B1 /* CTBasePresenter.h */,
-				3E59A91A20859AEE0005D3B1 /* CTBasePresenter.m */,
-				3E59A9202085C47B0005D3B1 /* CTBaseDataModel.h */,
-				3E59A91F2085C47B0005D3B1 /* CTBaseDataModel.m */,
-				3E58E7E320847D20006C7E88 /* NetworkService */,
 				3E58E85920847D9C006C7E88 /* Presenter */,
 				3E58E7EB20847D20006C7E88 /* Protocol */,
 				3E58E7EF20847D20006C7E88 /* Model */,
@@ -346,6 +341,19 @@
 				3E58E85A20847D9C006C7E88 /* CTTableViewPresenter.m */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3E84C19A208ED8B800A0378E /* MVP_Common */ = {
+			isa = PBXGroup;
+			children = (
+				3E59A91E2085A2F80005D3B1 /* CTBasePresenterProtocol.h */,
+				3E59A91D20859F840005D3B1 /* CTBaseViewControllerProtocol.h */,
+				3E59A91920859AEE0005D3B1 /* CTBasePresenter.h */,
+				3E59A91A20859AEE0005D3B1 /* CTBasePresenter.m */,
+				3E59A9202085C47B0005D3B1 /* CTBaseDataModel.h */,
+				3E59A91F2085C47B0005D3B1 /* CTBaseDataModel.m */,
+			);
+			path = MVP_Common;
 			sourceTree = "<group>";
 		};
 		A44564051E2A81E80079C37E = {
