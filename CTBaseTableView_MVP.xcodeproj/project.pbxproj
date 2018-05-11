@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E58B2D820A53E3F00FD761B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E58B2D720A53E3F00FD761B /* LaunchScreen.xib */; };
 		3E58E83520847D20006C7E88 /* CTRequestQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E7E520847D20006C7E88 /* CTRequestQueueManager.m */; };
 		3E58E83620847D20006C7E88 /* CTNetworkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E7E920847D20006C7E88 /* CTNetworkService.m */; };
 		3E58E83720847D20006C7E88 /* CTRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E7EA20847D20006C7E88 /* CTRequest.m */; };
@@ -37,7 +38,6 @@
 		3E58E85120847D20006C7E88 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3E58E82A20847D20006C7E88 /* README.md */; };
 		3E58E85220847D20006C7E88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E58E82B20847D20006C7E88 /* Assets.xcassets */; };
 		3E58E85320847D20006C7E88 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E82C20847D20006C7E88 /* ViewController.m */; };
-		3E58E85420847D20006C7E88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E58E82D20847D20006C7E88 /* LaunchScreen.storyboard */; };
 		3E58E85520847D20006C7E88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E58E82F20847D20006C7E88 /* Main.storyboard */; };
 		3E58E85620847D20006C7E88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E83120847D20006C7E88 /* main.m */; };
 		3E58E85720847D20006C7E88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E58E83220847D20006C7E88 /* AppDelegate.m */; };
@@ -52,6 +52,7 @@
 /* Begin PBXFileReference section */
 		18E5C76C1E2CCAFB001BC848 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		18E5C76E1E2CCB3A001BC848 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		3E58B2D720A53E3F00FD761B /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		3E58E7E120847D20006C7E88 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E58E7E420847D20006C7E88 /* CTNetworkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTNetworkService.h; sourceTree = "<group>"; };
 		3E58E7E520847D20006C7E88 /* CTRequestQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTRequestQueueManager.m; sourceTree = "<group>"; };
@@ -112,7 +113,6 @@
 		3E58E82A20847D20006C7E88 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3E58E82B20847D20006C7E88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E58E82C20847D20006C7E88 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3E58E82E20847D20006C7E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E58E83020847D20006C7E88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E58E83120847D20006C7E88 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E58E83220847D20006C7E88 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -167,18 +167,15 @@
 				3E58E83220847D20006C7E88 /* AppDelegate.m */,
 				3E58E82B20847D20006C7E88 /* Assets.xcassets */,
 				3E58E83320847D20006C7E88 /* Info.plist */,
-				3E58E82D20847D20006C7E88 /* LaunchScreen.storyboard */,
 				3E58E83120847D20006C7E88 /* main.m */,
 				3E58E82F20847D20006C7E88 /* Main.storyboard */,
+				3E58B2D720A53E3F00FD761B /* LaunchScreen.xib */,
 				3E58E7F720847D20006C7E88 /* TableView_MVP.xcdatamodeld */,
 				3E58E83420847D20006C7E88 /* ViewController.h */,
 				3E58E82C20847D20006C7E88 /* ViewController.m */,
-				3E59A92E2085DDC40005D3B1 /* TestViewController.h */,
-				3E59A92F2085DDC40005D3B1 /* TestViewController.m */,
-				3E59A9312085DEE40005D3B1 /* TestCellModel.h */,
-				3E59A9322085DEE40005D3B1 /* TestCellModel.m */,
-				3E59A9342085DF010005D3B1 /* TestTableViewCell.h */,
-				3E59A9352085DF010005D3B1 /* TestTableViewCell.m */,
+				3E6C0655209AE79C00C8B44F /* Controller */,
+				3E6C0656209AE7AE00C8B44F /* Views */,
+				3E6C0657209AE7BA00C8B44F /* Model */,
 			);
 			path = CTBaseTableView_MVP;
 			sourceTree = "<group>";
@@ -343,6 +340,33 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		3E6C0655209AE79C00C8B44F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3E59A92E2085DDC40005D3B1 /* TestViewController.h */,
+				3E59A92F2085DDC40005D3B1 /* TestViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3E6C0656209AE7AE00C8B44F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3E59A9342085DF010005D3B1 /* TestTableViewCell.h */,
+				3E59A9352085DF010005D3B1 /* TestTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E6C0657209AE7BA00C8B44F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E59A9312085DEE40005D3B1 /* TestCellModel.h */,
+				3E59A9322085DEE40005D3B1 /* TestCellModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3E84C19A208ED8B800A0378E /* MVP_Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,8 +459,8 @@
 				3E58E85120847D20006C7E88 /* README.md in Resources */,
 				3E58E83F20847D20006C7E88 /* MJRefresh.bundle in Resources */,
 				3E58E85220847D20006C7E88 /* Assets.xcassets in Resources */,
+				3E58B2D820A53E3F00FD761B /* LaunchScreen.xib in Resources */,
 				3E58E85520847D20006C7E88 /* Main.storyboard in Resources */,
-				3E58E85420847D20006C7E88 /* LaunchScreen.storyboard in Resources */,
 				3E58E83C20847D20006C7E88 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,14 +512,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3E58E82D20847D20006C7E88 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3E58E82E20847D20006C7E88 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		3E58E82F20847D20006C7E88 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
