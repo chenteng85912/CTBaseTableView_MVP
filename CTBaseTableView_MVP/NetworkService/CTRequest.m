@@ -12,7 +12,7 @@ NSInteger const kRequestTimeOut = 30.0;
 
 + (instancetype)creatNetworkRequest:(NSString * _Nullable)urlStr
                        requestModel:(CTNetWorkRequestModal)requestModel
-                             params:(NSDictionary *)params{
+                             params:(NSDictionary *)params {
 
     if (requestModel == CTPOSTRequestModal&&!params) {
         return nil;
@@ -25,11 +25,9 @@ NSInteger const kRequestTimeOut = 30.0;
         [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         NSError *error;
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:params options:NSJSONWritingPrettyPrinted error:&error];
-        
         request.HTTPBody = jsonData;
     }else{
         request.HTTPMethod  = @"GET";
-
     }
     
     request.timeoutInterval = kRequestTimeOut;

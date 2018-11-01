@@ -22,9 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _presenter = [CTTableViewPresenter initWithTableViewController:self];
-    
     [_presenter fetchData];
-    // Do any additional setup after loading the view.
 }
 /**
  获取请求参数
@@ -34,7 +32,6 @@
     NSDictionary *dic = @{@"":@""};
     return dic;
 }
-
 /**
  请求地址
  
@@ -43,14 +40,12 @@
 - (NSString *)requestUrlString{
     return @"";
 }
-
 - (NSString *)requestModal{
     return @"POST";
 }
 - (NSString *)customeCellClassName{
     return NSStringFromClass([TestTableViewCell class]);
 }
-
 - (NSString *)customeCellModelClassName{
     return NSStringFromClass([TestCellModel class]);
 }

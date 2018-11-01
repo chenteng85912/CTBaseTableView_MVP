@@ -29,12 +29,10 @@
  */
 - (void)attachViewController:(UIViewController <CTBaseViewControllerDelegateProtocol,CTBaseViewControllerDataSourceProtocol> *)viewController;
 
-
 /**
  解绑
  */
 - (void)detachViewController;
-
 
 /**
  开始网络请求 首次或者重新获取数据

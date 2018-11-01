@@ -15,12 +15,12 @@
 NSInteger const kSuccessCode = 200;
 @implementation CTBasePresenter
 
-+ (instancetype)initWithViewController:(UIViewController <CTBaseViewControllerDataSourceProtocol,CTBaseViewControllerDelegateProtocol> *)viewController{
++ (instancetype)initWithViewController:(UIViewController <CTBaseViewControllerDataSourceProtocol,CTBaseViewControllerDelegateProtocol> *)viewController {
   
     return [[self alloc] initWithViewController:viewController];
 }
 
-- (instancetype)initWithViewController:(UIViewController<CTBaseViewControllerDataSourceProtocol,CTBaseViewControllerDelegateProtocol> *)viewController{
+- (instancetype)initWithViewController:(UIViewController<CTBaseViewControllerDataSourceProtocol,CTBaseViewControllerDelegateProtocol> *)viewController {
     self = [super init];
     if (self) {
         _viewController = viewController;
@@ -28,15 +28,15 @@ NSInteger const kSuccessCode = 200;
     return self;
 }
 
-- (void)attachViewController:(UIViewController <CTBaseViewControllerDataSourceProtocol,CTBaseViewControllerDelegateProtocol> *)viewController{
+- (void)attachViewController:(UIViewController <CTBaseViewControllerDataSourceProtocol,CTBaseViewControllerDelegateProtocol> *)viewController {
     _viewController = viewController;
 }
 
-- (void)detachViewController{
+- (void)detachViewController {
     _viewController = nil;
 }
 
-- (void)attempRequest:(CTRequestBlock)complete{
+- (void)attempRequest:(CTRequestBlock)complete {
     if (!_viewController) {
         return;
     }
@@ -73,14 +73,13 @@ NSInteger const kSuccessCode = 200;
         [CTRequestQueueManager cancelRequestOperation:name];
     }];
 }
-- (void)showRequestResult:(NSError *)error resultObject:(NSDictionary *)objectDic{
+- (void)showRequestResult:(NSError *)error resultObject:(NSDictionary *)objectDic {
     
     if (error.code==-1009) {
         if ([_viewController respondsToSelector:@selector(requestFail:)]) {
             
             [_viewController requestFail:error.localizedDescription];
         }
-        
         return;
     }
     CTBaseDataModel *origin = [CTBaseDataModel initValueWithDictionary:objectDic];
@@ -90,10 +89,8 @@ NSInteger const kSuccessCode = 200;
             origin.errorMsg = @"网络错误,请重试";
         }
         if ([_viewController respondsToSelector:@selector(requestFail:)]) {
-            
             [_viewController requestFail:origin.errorMsg];
         }
-
         return;
     }
     

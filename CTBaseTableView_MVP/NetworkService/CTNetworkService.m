@@ -18,10 +18,10 @@
 
 @implementation CTNetworkService
 
-+ (instancetype)initWithRequest:(CTRequest *)request{
++ (instancetype)initWithRequest:(CTRequest *)request {
     return [[self alloc] initWithRequest:request];
 }
--  (instancetype)initWithRequest:(CTRequest *)request{
+-  (instancetype)initWithRequest:(CTRequest *)request {
     self = [super init];
     if (self) {
         self.request = request;
@@ -30,7 +30,7 @@
 }
 
 //发送网络请求
-- (void)startRequest:(void(^)(NSError *error,  id resultObj))afterRequest{
+- (void)startRequest:(void(^)(NSError *error,  id resultObj))afterRequest {
     
     if (!self.request) {
         NSAssert(NO, @"网络请求为空---request");
@@ -51,12 +51,9 @@
                 afterRequest(error,nil);
             }else{
                 NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-                                
                 afterRequest(nil,dict);
-
             }
         });
- 
     }];
     
     //发送请求
@@ -77,8 +74,7 @@
  */
 - (void)URLSession:(NSURLSession *)session
 didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
- completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler
-{
+ completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential *credential))completionHandler {
     //AFNetworking中的处理方式
     NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
     __block NSURLCredential *credential = nil;
@@ -105,11 +101,10 @@ didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
     }
 }
 
-- (void)cancel{
+- (void)cancel {
     if (_task) {
         self.requesting = NO;
         NSLog(@"取消网络请求--------%@",self.request.URL.absoluteString);
-
         [_task cancel];
     }
 }

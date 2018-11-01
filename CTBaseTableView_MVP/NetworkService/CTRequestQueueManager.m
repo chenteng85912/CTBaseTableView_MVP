@@ -30,7 +30,6 @@ static NSMutableDictionary <NSString *, id<CTNetworkProtocol> >*queueDic;
         if (request) {
             queueDic[key] = request;
             NSLog(@"网络请求队列:%@",queueDic);
-            
         }
     }
 }
@@ -40,26 +39,22 @@ static NSMutableDictionary <NSString *, id<CTNetworkProtocol> >*queueDic;
  
  @param className 网络请求存储className
  */
-+ (void)cancelRequestOperation:(NSString *)className{
++ (void)cancelRequestOperation:(NSString *)className {
     
     for (NSString *qKey in queueDic.allKeys) {
         if ([qKey isEqualToString:className]||[qKey containsString:className]) {
             [self p_cancelRequestOperationWithKey:qKey];
         }
     }
-   
 }
 
 + (void)p_cancelRequestOperationWithKey:(NSString  *)key{
     id operation = queueDic[key];
     if (operation) {
         if ([operation conformsToProtocol:@protocol(CTNetworkProtocol)]){
-            NSLog(@"取消了网络请求%@---%@",key,operation);
-            
             [(id<CTNetworkProtocol>) operation cancel];
         }
         [queueDic removeObjectForKey:key];
-        
     }
 }
 

@@ -34,10 +34,11 @@
 @implementation CTTableViewPresenter
 
 #pragma mark -CTTableViewPresenterProtocol
-+ (instancetype)initWithTableViewController:(UIViewController <CTTableViewDelegateProtocol,CTTableViewDataSourceProtocol>*)viewController{
++ (instancetype)initWithTableViewController:(UIViewController <CTTableViewDelegateProtocol,CTTableViewDataSourceProtocol>*)viewController {
     return [[self alloc] initWithTableViewController:viewController];
 }
-- (instancetype)initWithTableViewController:(UIViewController <CTTableViewDelegateProtocol,CTTableViewDataSourceProtocol>*)viewController{
+
+- (instancetype)initWithTableViewController:(UIViewController <CTTableViewDelegateProtocol,CTTableViewDataSourceProtocol>*)viewController {
     self = [super init];
     if (self) {
         _tbViewController = viewController;
@@ -48,17 +49,15 @@
     return self;
 }
 
-
 - (void)fetchData {
     if (_mjRefresh) {
         [self.tableView.mj_header beginRefreshing];
     }else{
         [self p_fetchData];
     }
-  
 }
 
-- (void)p_fetchData{
+- (void)p_fetchData {
     _oldDataNum = 0;
     _pageNo = 0;
     NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:_tbViewController.postParams];
@@ -68,8 +67,7 @@
     [self attempRequest:dic complete:^(NSError *error, id objectDic) {
         [weakSelf.tableViewData initStartTableViewData:objectDic];
         [weakSelf.tableView reloadData];
-        [weakSelf reStupTableviewFooterView];
-
+        [weakSelf p_reStupTableviewFooterView];
     }];
 }
 - (void)p_fetchMoreData {
@@ -81,12 +79,10 @@
     [self attempRequest:dic complete:^(NSError *error, id objectDic) {
         [weakSelf.tableViewData initMoreTableViewData:objectDic];
         [weakSelf.tableView reloadData];
-        
-        [weakSelf reStupTableviewFooterView];
-
+        [weakSelf p_reStupTableviewFooterView];
     }];
 }
-- (void)attempRequest:(NSDictionary *)params complete:(CTRequestBlock)complete{
+- (void)attempRequest:(NSDictionary *)params complete:(CTRequestBlock)complete {
     if (!_tbViewController) {
         return;
     }
@@ -116,14 +112,13 @@
         if (complete) {
             complete(error,objectDic);
         }
-        
         //完成后移除请求对象
         [CTRequestQueueManager cancelRequestOperation:name];
     }];
 }
 #pragma mark - TYKYTableViewProtocol
 //重置上拉刷新
-- (void)reStupTableviewFooterView{
+- (void)p_reStupTableviewFooterView {
     
     if (!_mjRefresh) {
         return;
@@ -134,27 +129,21 @@
     if (totalNum%_pageSize.integerValue>0) {
         if (totalNum>0) {
             //添加无更多数据的提示
-            
         }
     }else{
         if (_oldDataNum!=totalNum) {
             _oldDataNum = totalNum;
-        
             self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(p_fetchMoreData)];
-            
-            
         }else{
             self.tableView.mj_footer = nil;
             if (totalNum>0) {
                 //添加无更多数据的提示
             }
         }
-        
     }
 }
 #pragma mark - TableviewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     return 1;
 }
 
@@ -162,10 +151,8 @@
     return self.tableViewData.dataSourceArray.count;
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (CT_SUBCLASS_RESPONSE(_tbViewController,CTBaseTableView:cellForRowAtIndexPath:)) {
-        
         return [_tbViewController CTBaseTableView:tableView cellForRowAtIndexPath:indexPath];
     }
     
@@ -178,47 +165,40 @@
     }
     
     id <CTBaseTableViewCellProtocol> cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
     return (UITableViewCell*)cell;
-    
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{    CTBaseTableViewCellModel <CTBaseTableViewCellModelProtocol> *model = self.tableViewData.dataSourceArray[indexPath.row];
 
     id <CTBaseTableViewCellProtocol> mycell = (id <CTBaseTableViewCellProtocol>)cell;
-    
     if ([mycell respondsToSelector:@selector(processCellData:indexPath:)]) {
         [mycell processCellData:model indexPath:indexPath];
         
     }
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CTBaseTableViewCellModel  *model = self.tableViewData.dataSourceArray[indexPath.row];
     return model.cellHeight;
-    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 0.001;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 0.001;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CTBaseTableViewCellModel  *model = self.tableViewData.dataSourceArray[indexPath.row];
     if (CT_SUBCLASS_RESPONSE(_tbViewController, didSelectRowAtIndexPath:data:)) {
         [_tbViewController didSelectRowAtIndexPath:indexPath data:model];
     }
 }
-- (void)p_initTableView{
+- (void)p_initTableView {
     
     if (CT_SUBCLASS_RESPONSE(_tbViewController,customeCellNibName)&&_tbViewController.customeCellNibName) {
-        
         [self.tableView registerNib:[UINib nibWithNibName:_tbViewController.customeCellNibName bundle:nil]
              forCellReuseIdentifier:_tbViewController.customeCellNibName];
     }
     if (CT_SUBCLASS_RESPONSE(_tbViewController,customeCellClassName)&&_tbViewController.customeCellClassName) {
-        
         [self.tableView registerClass:NSClassFromString(_tbViewController.customeCellClassName)
                forCellReuseIdentifier:_tbViewController.customeCellClassName];
     }
@@ -227,11 +207,8 @@
         _mjRefresh = _tbViewController.makeMJRefresh;
         if (_mjRefresh) {
             self.tableView.mj_header = [self p_makeMJRefeshWithTarget:self andMethod:@selector(p_fetchData)];
-
         }
-        
     }
-    
 }
 #pragma mark -private methods 设置明杰刷新
 - (MJRefreshNormalHeader *)p_makeMJRefeshWithTarget:(id)root andMethod:(SEL)methodName{
@@ -257,7 +234,6 @@
         _tableViewData = [CTBaseTableViewModel new];
         if ([_tbViewController respondsToSelector:@selector(customeCellModelClassName)]) {
             _tableViewData.customeCellModelName = _tbViewController.customeCellModelClassName;
-            
         }
     }
     
@@ -268,10 +244,8 @@
         UITableViewStyle tbViewStyle = UITableViewStylePlain;
         if (CT_SUBCLASS_RESPONSE(_tbViewController,tableViewStyle)) {
             tbViewStyle = _tbViewController.tableViewStyle;
-            
         }
         _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-      
         _tableView = [[UITableView alloc] initWithFrame:_tbViewController.view.bounds style:tbViewStyle];
         if (CT_SUBCLASS_RESPONSE(_tbViewController,tableViewFrame)) {
             _tableView.frame = _tbViewController.tableViewFrame;

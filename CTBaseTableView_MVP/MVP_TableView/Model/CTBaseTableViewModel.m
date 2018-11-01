@@ -12,18 +12,18 @@
 @implementation CTBaseTableViewModel
 
 //初始化数据
-- (void)initStartTableViewData:(id)tbViewData{
+- (void)initStartTableViewData:(id)tbViewData {
     [self.dataSourceArray removeAllObjects];
     [self p_initData:tbViewData];
 }
 
 //加载更多数据
-- (void)initMoreTableViewData:(id)tbViewData{
+- (void)initMoreTableViewData:(id)tbViewData {
     [self p_initData:tbViewData];
 }
 
 //生成数据模型
-- (void)p_initData:(id)tbViewData{
+- (void)p_initData:(id)tbViewData {
     self.code = [tbViewData valueForKey:CODE];
     if (self.code.integerValue==200) {
         self.requestState = RequestSuccessModal;
@@ -46,7 +46,6 @@
                     cellModel = [cellModel initValueWithDictionary:valueData];
                     if ([cellModel respondsToSelector:@selector(calculateSizeConstrainedToSize:)]) {
                         [cellModel calculateSizeConstrainedToSize:CGSizeZero];
-
                     }
                 }
                 [self.dataSourceArray addObject:cellModel];
@@ -56,12 +55,10 @@
     }
 }
 
-
 #pragma mark lazy
-- (NSMutableArray <CTBaseTableViewCellModel *> *)dataSourceArray{
+- (NSMutableArray <CTBaseTableViewCellModel *> *)dataSourceArray {
     if (!_dataSourceArray) {
         _dataSourceArray = [NSMutableArray new];
-        
     }
     return _dataSourceArray;
 }

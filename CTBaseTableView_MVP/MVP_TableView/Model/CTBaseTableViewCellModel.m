@@ -10,7 +10,7 @@
 
 @implementation CTBaseTableViewCellModel
 
-- (instancetype)initValueWithDictionary:(NSDictionary *)cellInfo{
+- (instancetype)initValueWithDictionary:(NSDictionary *)cellInfo {
     self = [super init];
     if (self) {
         _originCellInfo = cellInfo;
@@ -20,7 +20,7 @@
     return self;
 }
 //没有找到模型key
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
     if ([self respondsToSelector:@selector(CTSetValue:forUndefinedKey:)]) {
         [self CTSetValue:value forUndefinedKey:key];
     }
